@@ -55,8 +55,6 @@ class PaidHandler(BaseHandler):
 		except:
 			ask_id = param['id']
 
-	        #url1 = 'http://10.15.0.64:8102/newask/'
-	        #url2 = 'http://10.15.0.64:8102/new_news/'
 		url1 = 'http://{}:{}/newask/'.format(CONFIG.insert_service_url, CONFIG.insert_service_port)
 		url2 = 'http://{}:{}/new_news/'.format(CONFIG.insert_service_url, CONFIG.insert_service_port)
 		
@@ -135,7 +133,7 @@ class PaidHandler(BaseHandler):
 class TestHandler(tornado.web.RequestHandler):
         def get(self):
                 print 'index'
-                self.write('hello iris, your has visit http://10.15.0.64:8103/paid_id/')
+                self.write('hello iris, your has visit test paid_id')
 
 
 application = tornado.web.Application([

@@ -35,14 +35,13 @@ def spider_(send_data):
         return text
 
 if __name__ == '__main__':
-        #url = 'http://10.15.0.64:8103/paid_id/'
 	url = 'http://{}:{}/paid_id/'.format(CONFIG.use_service_url, CONFIG.use_service_port)
 
 	today = datetime.date.today()
 	yesterday = today + datetime.timedelta(days = -1)
 
-	redis_set2 = redis.Redis(host='10.5.0.10', port=6300, password='123123', db=13)
-	redis_set = redis.Redis(host='10.5.0.10', port=6300, password='123123', db=14)
+	redis_set2 = CONFIG.test_r2
+	redis_set = CONFIG.test_r
 	#fid = open('/home/iris/newid/'+str(yesterday)+'.txt', 'r')
 	print yesterday
 	#print today

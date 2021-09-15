@@ -364,11 +364,10 @@ class NewsHandler(BaseHandler):
 
 		self.finish({"news_data":news_data, "recommends":list(recommends)})
 
-
 class TestHandler(tornado.web.RequestHandler):
         def get(self):
                 print 'index'
-                self.write('hello iris, your has visit http://10.15.0.9:8101/real/ask')
+                self.write('hello iris, your has visit test newask')
 
 application = tornado.web.Application([
         (r"/newask/", AskHandler),
